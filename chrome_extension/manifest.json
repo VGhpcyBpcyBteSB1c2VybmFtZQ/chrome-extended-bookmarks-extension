@@ -1,12 +1,8 @@
 {
-    "name": "Test Extension",
+    "name": "Extended Bookmarks",
     "version": "0.0.1",
-    "description": "Management",
-    "permissions": ["unlimitedStorage", "declarativeContent", "storage"],
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": false
-    },
+    "description": "Bookmark pages with more information associated with them including descriptions, time etc. with the added utility of keyword search.",
+    "permissions": ["unlimitedStorage", "storage", "activeTab"],
     "browser_action": {
       "default_popup": "popup.html",
       "default_icon": {

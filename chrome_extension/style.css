@@ -1,20 +1,25 @@
 body, html
 {
-	width: 700px;
-	height: 700px;
-	overflow-y: hidden;
+	width: 400px;
+	height: auto;
 	background: #13112D;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	padding-bottom: 10px;
+}
+.container-fluid
+{
+	padding-top: 70px;
 }
 
 .heading
 {
-	color: white;
 	text-align: center;
-	line-height: 30px;
+	font-family: 'Oswald', sans-serif;
+	line-height: 60px;
 	background: #432C22;
 	font-size: 14px;
-	font-family: 'Oswald', sans-serif;
-	height: 30px;
+	height: 60px;
 	transition: font-size 0.1s;
 }
 .heading:hover
@@ -47,13 +52,12 @@ body, html
 
 .heading-active
 {
-	color: white;
 	text-align: center;
-	line-height: 30px;
+	line-height: 60px;
 	background: #432C22;
 	font-size: 15px;
 	font-family: 'Oswald', sans-serif;
-	height: 30px;
+	height: 60px;
 	position: relative;
 }
 .heading-active:before
@@ -65,4 +69,40 @@ body, html
 	bottom: 0px;
 	left: 0;
 	background-color: white;
+}
+
+
+
+
+
+
+#add-bookmark
+{
+	max-width: 300px;
+	font-size: 24px;
+	margin: auto;
+}
+#display-link
+{
+	font-size: 12px;
+	max-width: 300px;
+	overflow: auto;
+}
+
+.std-input
+{
+	font-size: 15px;
+	width: 100%;
+}
+
+.desc-input
+{
+	font-size: 15px;
+	width: 100%;
+	height: 200px;
+}
+
+input, textarea
+{
+	padding: 2px;
 }
