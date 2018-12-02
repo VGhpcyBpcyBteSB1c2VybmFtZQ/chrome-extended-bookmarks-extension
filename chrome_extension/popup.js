@@ -36,6 +36,16 @@ function save_edit()
 
 }
 
+//function to delete bookmark from add bookmark page
+function delete_bookmark()
+{
+	var index = this.getAttribute("data-index");
+	chrome.storage.local.get({"bookmarks":null}, function(result){
+		result.bookmarks.splice(index, 1);
+		chrome.storage.local.set({"bookmarks": result.bookmarks}, function(){window.close();});
+	});
+}
+
 //function to search the locally stored bookmarks by link (if elementID is provided it will get the link from the value of element, if  link is provided it will use that link
 //if nothing is provided it will get the current tab link and search for that
 //the index of the element if found will be passed to callback otherwise -1 will be passed
@@ -144,6 +154,7 @@ function set_up_add_bookmark()
 				document.getElementById("save-btn").innerText = "Save";	
 				document.getElementById("save-btn").setAttribute("data-toggle", "edit");
 				document.getElementById("save-btn").setAttribute("data-index", index);
+				document.getElementById("del-btn").setAttribute("data-index", index);
 				chrome.storage.local.get({"bookmarks":null}, function(result){            //set the description of the page if already saved
 					document.getElementById("save-description").value = result.bookmarks[index].desc;
 					//alert("Was found at index "+index);
@@ -160,5 +171,6 @@ set_up_add_bookmark();
 
 // add event listeners
 document.getElementById("save-btn").addEventListener("click", save_edit);
+document.getElementById("del-btn").addEventListener("click", delete_bookmark);
 
 //chrome.storage.local.clear();
